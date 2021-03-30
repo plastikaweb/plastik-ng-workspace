@@ -39,9 +39,7 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -78,21 +76,20 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": [
-              "apps/philosophers/tsconfig.app.json",
-              "apps/philosophers/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!apps/philosophers/**"]
+            "lintFilePatterns": [
+              "apps/philosophers/src/**/*.ts",
+              "apps/philosophers/src/**/*.html"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/philosophers"],
           "options": {
             "jestConfig": "apps/philosophers/jest.config.js",
-            "tsConfig": "apps/philosophers/tsconfig.spec.json",
-            "setupFile": "apps/philosophers/src/test-setup.ts"
+            "passWithNoTests": true
           }
         }
       }
@@ -116,10 +113,9 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:eslint",
           "options": {
-            "tsConfig": ["apps/philosophers-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/philosophers-e2e/**"]
+            "lintFilePatterns": ["apps/ppp-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -129,12 +125,30 @@
     "defaultCollection": "@nrwl/angular"
   },
   "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
     "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
       "unitTestRunner": "jest",
       "e2eTestRunner": "cypress"
     },
     "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
       "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
     }
   },
   "defaultProject": "philosophers"
