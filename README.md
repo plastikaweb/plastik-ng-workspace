@@ -83,6 +83,18 @@ Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
 
 Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 
+## Running markdown files linter
+
+To pass markdown linter to any \*.md files, run `yarn markdownlint`.
+
+## App styling
+
+For detailed styling coding standards please go to [coding standards](/documentation/coding-standards.md).
+
+## Commit conventions
+
+For detailed commit conventions please go to [commit conventions](/documentation/commit-conventions.md).
+
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
