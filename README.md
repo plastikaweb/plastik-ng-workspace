@@ -95,6 +95,10 @@ For detailed styling coding standards please go to [coding standards](/documenta
 
 For detailed commit conventions please go to [commit conventions](/documentation/commit-conventions.md).
 
+## Repo libraries
+
+- [router-state](libs/router-state/README.md): compiles common router state management using @ngrx/router.
+
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev/angular) to learn more.

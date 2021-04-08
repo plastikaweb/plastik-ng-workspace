@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@plastik-ng-workspace/router-state": ["libs/router-state/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

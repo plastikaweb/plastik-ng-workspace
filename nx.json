@@ -2,33 +2,19 @@
   "npmScope": "plastik-ng-workspace",
   "implicitDependencies": {
     "angular.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "tasksRunnerOptions": {
-    "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
-    }
+    "default": { "runner": "@nrwl/workspace/tasks-runners/default", "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] } }
   },
   "projects": {
-    "philosophers-e2e": {
-      "tags": [],
-      "implicitDependencies": ["philosophers"]
-    },
-    "philosophers": {
-      "tags": []
-    }
+    "philosophers-e2e": { "tags": [], "implicitDependencies": ["philosophers"] },
+    "philosophers": { "tags": [] },
+    "router-state": { "tags": [] }
   }
 }

@@ -21,10 +21,7 @@
             "polyfills": "apps/philosophers/src/polyfills.ts",
             "tsConfig": "apps/philosophers/tsconfig.app.json",
             "aot": false,
-            "assets": [
-              "apps/philosophers/src/favicon.ico",
-              "apps/philosophers/src/assets"
-            ],
+            "assets": ["apps/philosophers/src/favicon.ico", "apps/philosophers/src/assets"],
             "styles": ["apps/philosophers/src/styles.scss"],
             "scripts": []
           },
@@ -78,10 +75,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/philosophers/src/**/*.ts",
-              "apps/philosophers/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/philosophers/src/**/*.ts", "apps/philosophers/src/**/*.html"]
           }
         },
         "test": {
@@ -116,6 +110,28 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/ppp-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "router-state": {
+      "projectType": "library",
+      "root": "libs/router-state",
+      "sourceRoot": "libs/router-state/src",
+      "prefix": "plastik-ng-workspace",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/router-state/src/**/*.ts", "libs/router-state/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/router-state"],
+          "options": {
+            "jestConfig": "libs/router-state/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
